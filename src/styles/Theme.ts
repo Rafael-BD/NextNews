@@ -4,7 +4,7 @@ const lightTheme = {
     tertiaryColor: 'rgb(91, 143, 185)',
     backgroundColor: 'rgb(182, 234, 218)',
     errorColor: '#601410',
-    Transparency: 'rgba(182, 234, 218, 0.2)',
+    Transparency: 'rgba(3, 0, 28, 0.815)',
 };
   
   const darkTheme = {
@@ -13,7 +13,7 @@ const lightTheme = {
     tertiaryColor: 'rgb(48, 30, 103)',
     backgroundColor: 'rgb(3, 0, 28)',
     errorColor: '#601410',
-    Transparency: 'rgba(182, 234, 218, 0.2)',
+    Transparency: 'rgba(182, 234, 218, 0.815)',
 };
 
 const themes = {
