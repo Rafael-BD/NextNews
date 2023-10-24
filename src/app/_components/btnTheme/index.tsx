@@ -16,7 +16,5 @@ const BtnTheme: React.FC<Props> = ({ onClick, theme }) => {
     );
 };
 
-
-
 export default BtnTheme;
 

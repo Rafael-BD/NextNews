@@ -1,14 +1,17 @@
+import { Button } from '@mui/material';
 import styled from 'styled-components';
 
 const Nav = styled.nav`
     background-color: ${props => props.theme.Transparency};
     overflow: hidden;
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(10px);
     position: fixed;
     top: 0;
     width: 100%;
     left: 0;
     justify-content: center;
+    padding: 0.5rem;
 `;
 
 const Ul = styled.ul`
@@ -23,6 +26,7 @@ const Ul = styled.ul`
 
 const Li = styled.li`
     flex: 1;
+    margin-left: 1rem;
 `;
 
 const Title = styled.h1`
@@ -59,6 +63,7 @@ const SearchInput = styled.input`
 
     @media (max-width: 768px) {
         font-size: 0.8rem;
+        width: 8rem;
     }
 `;
 
@@ -72,32 +77,29 @@ const SearchIcon = styled.button`
     margin-left: 1rem;
 `;
 
-const CategorySelect = styled.select`
-    background-color: transparent;
+const CategoryBtn = styled(Button)`
+    color:${props => props.theme.backgroundColor};
+    border-color: ${props => props.theme.tertiaryColor};
+    &:hover {
+        background-color: ${props => props.theme.tertiaryColor};
+        color: ${props => props.theme.backgroundColor};
+    }
+    padding: 0.1rem 0.3rem;
+    margin-right: 1rem;
+`;
+
+    const HomeBtn = styled.button`
+    font-size: 1.8rem;
     color: ${props => props.theme.backgroundColor};
     border: none;
-    outline: none;
-    font-size: 1rem;
+    background-color: transparent;
     cursor: pointer;
-    appearance: none;
     padding: 0.3rem 0.5rem;
+    float: left;
+    box-shadow: none;
 
-    @media (max-width: 768px) {
-        font-size: 0.8rem;
-    }
-
-    &:focus {
-        background-color: ${props => props.theme.Transparency};
-    }
-
-    option[hidden] {
-    /* Estilo para a opção que exibirá o ícone */
-    background-image: url('../../../assets/menu.svg'); /* Substitua pelo caminho correto da imagem */
-    background-size: 20px 20px; /* Tamanho do ícone */
-    background-repeat: no-repeat;
-    padding-left: 30px; /* Espaçamento para exibir o ícone */
-  }
 `;
 
 
-export { Nav, Ul, Li, P, Title, SearchForm, SearchInput, SearchIcon, CategorySelect };
+
+export { Nav, Ul, Li, P, Title, SearchForm, SearchInput, SearchIcon, CategoryBtn, HomeBtn };

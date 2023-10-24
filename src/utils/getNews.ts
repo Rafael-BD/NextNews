@@ -1,7 +1,8 @@
 import axios from 'axios';
 
-interface NewsAPIResponse {
+export interface NewsAPIResponse {
     articles: {
+        author: string;
         title: string;
         description: string;
         url: string;
@@ -17,6 +18,8 @@ interface GetNewsParams {
     category?: string;
     keyword?: string;
     country?: string;
+    pageSize?: number;
+    page?: number;
 }
 
 const API_KEY = process.env.NEXT_PUBLIC_KEY;
@@ -27,16 +30,18 @@ export const getNews = async (params: GetNewsParams): Promise<NewsAPIResponse> =
         return { articles: [] };
     }
 
-    const { category, keyword, country } = params;
+    const { category, keyword, country, pageSize, page } = params;
     const url = 'https://newsapi.org/v2/top-headlines';
 
     try {
         const response = await axios.get(url, {
             params: {
                 apiKey: API_KEY,
-                category,
+                category: category,
                 q: keyword,
-                country,
+                country: country,
+                pageSize: pageSize,
+                page: page,
             },
         });
 
