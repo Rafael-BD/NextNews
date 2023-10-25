@@ -13,9 +13,9 @@ Este é um projeto de website de notícias construído com Next.js, TypeScript e
 
 Aqui estão algumas capturas de tela que demonstram a aparência do projeto:
 
-- [Captura de Tela 1](link-para-captura-tema-claro)
-- [Captura de Tela 2](link-para-captura-tema-escuro)
-- [Captura de Tela 3 (Responsividade)](link-para-captura-responsiva)
+- [Captura de Tela 1](https://github.com/Rafael-BD/NextNews/blob/main/assets/Screenshot%202023-10-24%20at%2000-28-02%20NextNews.png)
+- [Captura de Tela 2](https://github.com/Rafael-BD/NextNews/blob/main/assets/Screenshot%202023-10-24%20at%2000-28-18%20NextNews.png)
+- [Captura de Tela 3 (Responsividade)]([link-para-captura-responsiva](https://github.com/Rafael-BD/NextNews/blob/main/assets/Screenshot%202023-10-24%20at%2000-28-18%20NextNews.png))
 
 ## Como Executar
 
@@ -23,8 +23,8 @@ Se desejar executar este projeto localmente, siga as etapas abaixo:
 
 1. **Clonar o repositório:**
   ```sh
-    git clone https://github.com/seu-nome-de-usuario/seu-repositorio.git
-    cd seu-repositorio
+    git clone https://github.com/Rafael-BD/NextNews.git
+    cd NextNews
   ```
    
 3. **Instalar depêndencias:**
