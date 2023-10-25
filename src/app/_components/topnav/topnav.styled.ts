@@ -89,7 +89,7 @@ const CategoryBtn = styled(Button)`
     margin-right: 1rem;
 `;
 
-    const HomeBtn = styled(Link)`
+const HomeBtn = styled(Link)`
     font-size: 1.8rem;
     color: ${props => props.theme.backgroundColor};
     border: none;
@@ -101,6 +101,7 @@ const CategoryBtn = styled(Button)`
     text-decoration: none;
 
 `;
+
 
 
 

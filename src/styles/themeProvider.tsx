@@ -10,8 +10,11 @@ interface ThemeProviderProps {
 }
 
 const ThemeProvider_ = ({ children }: ThemeProviderProps) => {
-    const [isDarkMode, setIsDarkMode] = useState(false);
+    const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const [isDarkMode, setIsDarkMode] = useState(prefersDarkMode);
+
     const { light, dark } = themes;
+
 
     const toggleTheme = () => {
         setIsDarkMode(!isDarkMode);
@@ -22,11 +25,8 @@ const ThemeProvider_ = ({ children }: ThemeProviderProps) => {
             <GlobalStyles />
             <BtnTheme onClick={toggleTheme} theme={isDarkMode ? 'dark' : 'light'} />
             {children}
-        </ThemeProvider>  
+        </ThemeProvider>
     );
-
 };
 
 export default ThemeProvider_;
-
-

@@ -24,8 +24,7 @@ export default function RootLayout({
       </head>
       <body>
         <ThemeProvider_>
-          <CountryProvider>
-            
+          <CountryProvider>         
             <TopNav />
             {children}
           </CountryProvider>

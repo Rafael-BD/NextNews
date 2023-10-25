@@ -1,5 +1,5 @@
 'use client'
-import React, { useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import styled from 'styled-components';
 import CardContent from '@mui/material/CardContent';
 import Grid from '@mui/material/Grid';
@@ -7,19 +7,21 @@ import Link from '@mui/material/Link';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { getNews, NewsAPIResponse } from '@/utils/getNews';
 import { GridContainer, CardContainer, CardMediaContainer, Title, Text } from './topNews.styled';
+import { CountryContext } from '../btnCountryChange';
 
 const TopNews = () => {
   const [featuredNews, setFeaturedNews] = React.useState<NewsAPIResponse['articles'] | null>(null);
   const isSmallScreen = useMediaQuery('(max-width:768px)');
+  const { selectedCountry } = useContext(CountryContext);
 
   useEffect(() => {
       (async () => {
-          const news = await getNews({country: 'us', pageSize: 3});
-          if(featuredNews == null && news.articles != null){
+          const news = await getNews({country: selectedCountry, pageSize: 3});
+          if(news.articles != null){
             setFeaturedNews(news.articles);
           }       
       })();
-  }, []);
+  }, [selectedCountry]);
 
   return featuredNews ? (
     <GridContainer container spacing={2}>

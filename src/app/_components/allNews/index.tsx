@@ -1,10 +1,11 @@
-import React, { useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import CardContent from '@mui/material/CardContent';
 import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { getNews, NewsAPIResponse } from '@/utils/getNews';
 import { GridContainer, CardContainer, CardMediaContainer, Title, Text } from './allNews.styled';
+import { CountryContext } from '../btnCountryChange';
 
 interface AllNewsProps {
   news: NewsAPIResponse['articles'] | null;
@@ -13,16 +14,17 @@ interface AllNewsProps {
 const AllNews = ({ news }: AllNewsProps) => {
   const [News, setNews] = React.useState<NewsAPIResponse['articles'] | null>(null);
   const isSmallScreen = useMediaQuery('(max-width:600px)');
+  const { selectedCountry } = useContext(CountryContext);
 
   useEffect(() => {
       !news ? (async () => {
-          const news = await getNews({country: 'us', pageSize: 100});
-          if(News == null && news.articles != null){
+          const news = await getNews({country: selectedCountry, pageSize: 100});
+          if(news.articles != null){
             news.articles.splice(0, 3);
             setNews(news.articles);
           }       
       })() : setNews(news);
-  }, []);
+  }, [selectedCountry]);
 
   return News ? (
     <GridContainer container spacing={3}>
