@@ -6,18 +6,22 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import { getNews, NewsAPIResponse } from '@/utils/getNews';
 import { GridContainer, CardContainer, CardMediaContainer, Title, Text } from './allNews.styled';
 
-const AllNews = () => {
+interface AllNewsProps {
+  news: NewsAPIResponse['articles'] | null;
+}
+
+const AllNews = ({ news }: AllNewsProps) => {
   const [News, setNews] = React.useState<NewsAPIResponse['articles'] | null>(null);
   const isSmallScreen = useMediaQuery('(max-width:600px)');
 
   useEffect(() => {
-      (async () => {
+      !news ? (async () => {
           const news = await getNews({country: 'us', pageSize: 100});
           if(News == null && news.articles != null){
             news.articles.splice(0, 3);
             setNews(news.articles);
           }       
-      })();
+      })() : setNews(news);
   }, []);
 
   return News ? (

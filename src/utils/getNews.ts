@@ -16,7 +16,7 @@ export interface NewsAPIResponse {
 
 interface GetNewsParams {
     category?: string;
-    keyword?: string;
+    q?: string;
     country?: string;
     pageSize?: number;
     page?: number;
@@ -30,7 +30,7 @@ export const getNews = async (params: GetNewsParams): Promise<NewsAPIResponse> =
         return { articles: [] };
     }
 
-    const { category, keyword, country, pageSize, page } = params;
+    const { category, q, country, pageSize, page } = params;
     const url = 'https://newsapi.org/v2/top-headlines';
 
     try {
@@ -38,14 +38,17 @@ export const getNews = async (params: GetNewsParams): Promise<NewsAPIResponse> =
             params: {
                 apiKey: API_KEY,
                 category: category,
-                q: keyword,
+                q: q,
                 country: country,
                 pageSize: pageSize,
                 page: page,
             },
         });
 
-        return response.data;
+        const filteredArticles = response.data.articles.filter((article: NewsAPIResponse['articles'][0]) => article.title !== '[Removed]');
+
+        return { articles: filteredArticles };
+        
     } catch (error) {
         console.error(error);
         throw new Error('Erro ao recuperar notícias');

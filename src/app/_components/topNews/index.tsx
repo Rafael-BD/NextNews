@@ -1,3 +1,4 @@
+'use client'
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import CardContent from '@mui/material/CardContent';
@@ -9,7 +10,7 @@ import { GridContainer, CardContainer, CardMediaContainer, Title, Text } from '.
 
 const TopNews = () => {
   const [featuredNews, setFeaturedNews] = React.useState<NewsAPIResponse['articles'] | null>(null);
-  const isSmallScreen = useMediaQuery('(max-width:600px)');
+  const isSmallScreen = useMediaQuery('(max-width:768px)');
 
   useEffect(() => {
       (async () => {

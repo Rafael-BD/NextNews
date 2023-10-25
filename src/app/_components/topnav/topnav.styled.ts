@@ -1,4 +1,5 @@
 import { Button } from '@mui/material';
+import Link from 'next/link';
 import styled from 'styled-components';
 
 const Nav = styled.nav`
@@ -88,7 +89,7 @@ const CategoryBtn = styled(Button)`
     margin-right: 1rem;
 `;
 
-    const HomeBtn = styled.button`
+    const HomeBtn = styled(Link)`
     font-size: 1.8rem;
     color: ${props => props.theme.backgroundColor};
     border: none;
@@ -97,6 +98,7 @@ const CategoryBtn = styled(Button)`
     padding: 0.3rem 0.5rem;
     float: left;
     box-shadow: none;
+    text-decoration: none;
 
 `;
 

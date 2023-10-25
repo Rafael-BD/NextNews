@@ -1,3 +1,4 @@
+'use client'
 import React from 'react';
 import { NextPage } from 'next';
 import styled from 'styled-components';
@@ -34,7 +35,7 @@ const HomePage: NextPage = () => {
         <Container>
             <TopNews />
             <DividerStyled/>
-            <AllNews />
+            <AllNews news={null} />
         </Container>
     );
 };
