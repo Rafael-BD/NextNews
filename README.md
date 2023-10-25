@@ -13,9 +13,15 @@ Este é um projeto de website de notícias construído com Next.js, TypeScript e
 
 Aqui estão algumas capturas de tela que demonstram a aparência do projeto:
 
-- [Captura de Tela 1](https://github.com/Rafael-BD/NextNews/blob/main/assets/Screenshot%202023-10-24%20at%2000-28-02%20NextNews.png)
-- [Captura de Tela 2](https://github.com/Rafael-BD/NextNews/blob/main/assets/Screenshot%202023-10-24%20at%2000-28-18%20NextNews.png)
-- [Captura de Tela 3 (Responsividade)]([link-para-captura-responsiva](https://github.com/Rafael-BD/NextNews/blob/main/assets/Screenshot%202023-10-24%20at%2000-28-18%20NextNews.png))
+<img width="80%" src='https://github.com/Rafael-BD/NextNews/blob/main/assets/Screenshot%202023-10-24%20at%2000-28-02%20NextNews.png'/>
+
+#
+
+<img width="80%" src='https://github.com/Rafael-BD/NextNews/blob/main/assets/Screenshot%202023-10-24%20at%2000-28-18%20NextNews.png'/>
+
+#
+
+<img width="30%" src='https://github.com/Rafael-BD/NextNews/blob/main/assets/Captura%20de%20tela%202023-10-24%20-%2000.26.41.png'/>
 
 ## Como Executar
 
